@@ -21,7 +21,21 @@
 function cardFunction(){
     axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response =>{
-        const articlesData = response.data;
-        
+        const articlesData = response.data.articles;
+        const articlesValues = Object.values(articlesData);
+
+        articlesValues.forEach(item =>{
+            item.forEach(items=>{
+                articleCard(items);
+            })
+        })
     })
+}
+
+const display = document.querySelector('.cards-container');
+
+function articleCard(object){
+    
+    console.log(object);
+    
 }
