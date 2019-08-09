@@ -25,3 +25,14 @@ function axiosFunction(){
     })
 }
 
+const topicLink = document.querySelector('.topics');
+
+function insertTopic(newData){
+    const tabDiv = document.createElement('div');
+    tabDiv.classList.add('tab');
+    tabDiv.textContent = newData;
+
+    topicLink.appendChild(tabDiv);
+}
+
+axiosFunction();
